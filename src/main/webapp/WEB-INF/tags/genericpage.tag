@@ -24,10 +24,6 @@
     -->
 <header class="d-flex flex-column flex-md-row align-items-center p-3 pb-0 px-md-4 mb-4 bg-white border-bottom shadow-sm">
     <div class="h5 my-0 me-md-auto fw-normal">
-        <p>Demo Project for DAT 2. semester</p>
-        <p style="font-size: larger">
-            <jsp:invoke fragment="header"/>
-        </p>
     </div>
     <nav class="my-2 my-md-0 me-md-3">
         <c:if test="${addHomeLink == null }">

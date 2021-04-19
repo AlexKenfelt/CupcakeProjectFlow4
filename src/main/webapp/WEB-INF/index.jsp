@@ -5,7 +5,7 @@
 <t:genericpage>
 
     <jsp:attribute name="header">
-         Home
+
     </jsp:attribute>
 
     <jsp:attribute name="footer">
@@ -14,11 +14,38 @@
 
     <jsp:body>
 
-        <div>
-            <h2>Our Cool Site</h2>
+        <div id="body" class="container" style="min-height: 20vh;">
+        <img src="${pageContext.request.contextPath}/images/logo2.PNG" class ="img-fluid mb-4"/>
 
-            <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
+        <div>
+            <h2>Velkommen til smil og søde sager</h2>
+
+            <p>Vælg lige din perfekte cupcake sammensætning:</p>
+
+            <div class="row" >
+                <div class="col">
+                        <select name="sport" id="bottom">
+                            <c:forEach var="bottom" items="${applicationScope.bottomList}">
+                                <option value="${bottom.id}">${bottom.name} DKK ${bottom.price},-</option>
+                            </c:forEach>
+                        </select>
+                </div>
+                <div class="col">
+                    <select name="sport" id="topping">
+                        <c:forEach var="bottom" items="${applicationScope.bottomList}">
+                            <option value="${bottom.id}">${bottom.name} DKK ${bottom.price},-</option>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="col">
+                    <select name="sport" id="option">
+                        <c:forEach var="bottom" items="${applicationScope.bottomList}">
+                            <option value="${bottom.id}">${bottom.name} DKK ${bottom.price},-</option>
+                        </c:forEach>
+                    </select>
+
+                </div>
+
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">
