@@ -9,12 +9,12 @@ public class User
         this.password = password;
         this.role = role;
     }
-
+ 
     private int id; // just used to demo retrieval of autogen keys in UserMapper
     private String email;
     private String password; // Should be hashed and secured
     private String role;
-
+ 
     public String getEmail()
     {
         return email;
