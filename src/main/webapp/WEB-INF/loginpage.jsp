@@ -16,13 +16,13 @@
                 <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="email">Email</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="text" name="email" placeholder="someone@nowhere.com">
+                        <input class="form-control" type="text" id="email" name="email" placeholder="someone@nowhere.com">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="password">Password</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="password" name="password" placeholder="sesam">
+                        <input class="form-control" type="password" id="password" name="password" placeholder="sesam">
                     </div>
                 </div>
                 <c:if test="${requestScope.error != null }">
@@ -34,17 +34,13 @@
                 <c:if test="${not empty param.msg}">
                     <p style="font-size: large">${param.msg}</p>
                 </c:if>
-                <button class="btn btn-primary" type="submit" value="Login" >Sign in</button>
+                <button class="btn btn-primary" type="submit" value="Login" >Login</button>
 
-                <nav class="my-2 my-md-0 me-md-3">
-                    <c:if test="${addHomeLink == null }">
-                        <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Home</a>
-                    </c:if>
-                    <a class="p-2 text-dark" href="#">Meld dig ind</a>
+                <button class="btn btn-primary" type="submit" value="Login" >Meld dig ind</button>
                 </nav>
 
             </form>
-            <button class="btn btn-primary" type="submit" value="Login" a href="fc/registerpage">Sign in</button>
+
 
         </div>
     </jsp:body>

@@ -31,7 +31,7 @@
             <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Hjem</a>
         </c:if>
         <a class="p-2 text-dark" href="#">Orders</a>
-        <a class="p-2 text-dark" href="#">Indkøbskurv</a>
+        <a class="p-2 text-dark" href="<%=request.getContextPath()%>/fc/cartpage">Indkøbskurv</a>
         <a class="p-2 text-dark" href="#">About</a>
     </nav>
 

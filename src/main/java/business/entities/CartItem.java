@@ -10,4 +10,16 @@ public class CartItem {
         this.top = top;
         this.quantity = quantity;
     }
+
+    public int getBottom() {
+        return bottom;
+    }
+
+    public int getTop() {
+        return top;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
 }

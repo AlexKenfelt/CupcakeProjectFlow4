@@ -20,10 +20,13 @@
 
             <p style="text-align: center">Sammensæt her den cupcake der passer til dig:</p><br>
 
+           <form action="${pageContext.request.contextPath}/fc/addtocart" method="post">
+
+
             <div class="row" >
                 <div class="col">
                     <label for="bottom">Vælg bund</label> <br>
-                        <select name="cupcake" id="bottom">
+                        <select name="bottom" id="bottom">
                             <c:forEach var="bottom" items="${applicationScope.bottomList}">
                                 <option value="${bottom.id}">${bottom.name} DKK ${bottom.price},-</option>
                             </c:forEach>
@@ -31,15 +34,15 @@
                 </div>
                 <div class="col">
                     <label for="topping">Vælg topping</label> <br>
-                    <select name="cupcake" id="topping">
+                    <select name="topping" id="topping">
                         <c:forEach var="topping" items="${applicationScope.toppingList}">
                             <option value="${topping.id}">${topping.name} DKK ${topping.price},-</option>
                         </c:forEach>
                     </select>
                 </div>
                 <div class="col">
-                    <label>Vælg antal</label> <br>
-                    <select>
+                    <label for="quantity">Vælg antal</label> <br>
+                    <select id="quantity"  name="quantity">
                         <option>1</option>
                         <option>2</option>
                         <option>4</option>
@@ -48,8 +51,13 @@
                         <option>15</option>
                     </select>
                 </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary mt-3">Læg i kurv</button>
+
+                </div>
 
             </div>
+           </form>
 
             <c:if test="${sessionScope.role == 'employee' }">
                 <p style="font-size: larger">Det her er hvad du kan gøre,

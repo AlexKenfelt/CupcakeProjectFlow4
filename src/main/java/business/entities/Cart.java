@@ -9,4 +9,8 @@ public class Cart {
     public void addCartItem(CartItem cartItem) {
         cartItemList.add(cartItem);
     }
+
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
 }
