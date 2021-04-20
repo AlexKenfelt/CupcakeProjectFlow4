@@ -34,9 +34,17 @@
                 <c:if test="${not empty param.msg}">
                     <p style="font-size: large">${param.msg}</p>
                 </c:if>
-                <button class="btn btn-primary" type="submit" value="Login">Sign in</button>
-            </form>
+                <button class="btn btn-primary" type="submit" value="Login" >Sign in</button>
 
+                <nav class="my-2 my-md-0 me-md-3">
+                    <c:if test="${addHomeLink == null }">
+                        <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Home</a>
+                    </c:if>
+                    <a class="p-2 text-dark" href="#">Meld dig ind</a>
+                </nav>
+
+            </form>
+            <button class="btn btn-primary" type="submit" value="Login" a href="fc/registerpage">Sign in</button>
 
         </div>
     </jsp:body>
