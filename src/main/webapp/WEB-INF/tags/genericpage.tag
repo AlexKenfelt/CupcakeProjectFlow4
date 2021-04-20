@@ -27,9 +27,10 @@
     </div>
     <nav class="my-2 my-md-0 me-md-3">
         <c:if test="${addHomeLink == null }">
-            <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Home</a>
+            <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Hjem</a>
         </c:if>
         <a class="p-2 text-dark" href="#">Orders</a>
+        <a class="p-2 text-dark" href="#">Indkøbskurv</a>
         <a class="p-2 text-dark" href="#">Profile</a>
         <a class="p-2 text-dark" href="#">About</a>
     </nav>
@@ -64,12 +65,20 @@
 </div>
 
 <!-- Footer -->
-<div class="container">
+    <footer>
+
     <br>
     <hr>
     <br>
+    <h4>Kontakt</h4>
+    <p>
+        Email - cupcake@email.com
+        Tlf.  - 10111213
+        Adr.  - Olsker cupcakes 1
+    </p>
+
     <jsp:invoke fragment="footer"/>
-</div>
+    </footer>
 
 </body>
 </html>

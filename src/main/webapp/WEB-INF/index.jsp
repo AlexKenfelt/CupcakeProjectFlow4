@@ -24,26 +24,31 @@
 
             <div class="row" >
                 <div class="col">
-                        <select name="sport" id="bottom">
+                    <label for="bottom">Vælg bund</label> <br>
+                        <select name="cupcake" id="bottom">
                             <c:forEach var="bottom" items="${applicationScope.bottomList}">
                                 <option value="${bottom.id}">${bottom.name} DKK ${bottom.price},-</option>
                             </c:forEach>
                         </select>
                 </div>
                 <div class="col">
-                    <select name="sport" id="topping">
-                        <c:forEach var="bottom" items="${applicationScope.bottomList}">
-                            <option value="${bottom.id}">${bottom.name} DKK ${bottom.price},-</option>
+                    <label for="topping">Vælg topping</label> <br>
+                    <select name="cupcake" id="topping">
+                        <c:forEach var="topping" items="${applicationScope.toppingList}">
+                            <option value="${topping.id}">${topping.name} DKK ${topping.price},-</option>
                         </c:forEach>
                     </select>
                 </div>
                 <div class="col">
-                    <select name="sport" id="option">
-                        <c:forEach var="bottom" items="${applicationScope.bottomList}">
-                            <option value="${bottom.id}">${bottom.name} DKK ${bottom.price},-</option>
-                        </c:forEach>
+                    <label>Vælg antal</label> <br>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>15</option>
                     </select>
-
                 </div>
 
             </div>
