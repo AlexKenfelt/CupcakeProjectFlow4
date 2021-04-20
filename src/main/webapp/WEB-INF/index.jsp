@@ -18,9 +18,10 @@
         <img src="${pageContext.request.contextPath}/images/logo2.PNG" class ="img-fluid mb-4"/>
 
         <div>
-            <h2>Velkommen til smil og søde sager</h2>
+            <h2 style="text-align: center"> Velkommen til smil og søde sager :) </h2> <br>
 
-            <p>Vælg lige din perfekte cupcake sammensætning:</p>
+
+            <p style="text-align: center">Sammensæt her den cupcake der passer til dig:</p><br>
 
             <div class="row" >
                 <div class="col">
@@ -54,15 +55,15 @@
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
+                <p style="font-size: larger">Det her er hvad du kan gøre,
+                    når du er logget ind som medarbejder.</p>
+                 <p><a href="fc/employeepage">Medarbejder siden</a>
              </c:if>
 
              <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
+                <p style="font-size: larger">Det er hvad du kan gøre,
+                                når du er logget ind som kunde. </p>
+                <p><a href="fc/customerpage">Kunde siden</a>
             </c:if>
 
         </div>
