@@ -1,7 +1,9 @@
 package web;
 
 import business.exceptions.UserException;
+import business.persistence.CupcakeMapper;
 import business.persistence.Database;
+import business.services.CupcakeFacade;
 import web.commands.*;
 
 import java.io.IOException;
@@ -39,7 +41,13 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
-
+        CupcakeMapper cupcakeMapper = new CupcakeMapper(database);
+        try {
+            getServletContext().setAttribute("bottomList", cupcakeMapper.getAllBottoms());
+            getServletContext().setAttribute("toppingList", cupcakeMapper.getAllTopping());
+        } catch (UserException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void processRequest(
