@@ -32,7 +32,6 @@
         </c:if>
         <a class="p-2 text-dark" href="#">Orders</a>
         <a class="p-2 text-dark" href="#">Indkøbskurv</a>
-        <a class="p-2 text-dark" href="#">Profile</a>
         <a class="p-2 text-dark" href="#">About</a>
     </nav>
 

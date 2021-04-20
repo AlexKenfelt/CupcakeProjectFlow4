@@ -4,13 +4,15 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Demo Page for Employee Roles
+         Godarbejdslyst til vores medarbejder
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
         <h1>Hello ${sessionScope.email} </h1>
-        You are now logged in as a EMPLOYEE of our wonderful site.
+        Du er nu logget på som medarbejder
+
+        <p><a href="${pageContext.request.contextPath}/fc/">Gå til alle cupcake ordre </a></p>
 
     </jsp:body>
 </t:genericpage>

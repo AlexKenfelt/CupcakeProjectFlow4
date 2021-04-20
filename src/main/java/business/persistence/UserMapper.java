@@ -62,7 +62,7 @@ public class UserMapper
                     return user;
                 } else
                 {
-                    throw new UserException("Could not validate user");
+                    throw new UserException("Brugerne kunne ikke valideres");
                 }
             }
             catch (SQLException ex)
@@ -72,7 +72,7 @@ public class UserMapper
         }
         catch (SQLException ex)
         {
-            throw new UserException("Connection to database could not be established");
+            throw new UserException("Ingen forbindelse til databasen");
         }
     }
 
