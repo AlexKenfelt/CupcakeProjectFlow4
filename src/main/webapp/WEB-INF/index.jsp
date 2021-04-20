@@ -14,9 +14,6 @@
 
     <jsp:body>
 
-        <div id="body" class="container" style="min-height: 20vh;">
-        <img src="${pageContext.request.contextPath}/images/logo2.PNG" class ="img-fluid mb-4"/>
-
         <div>
             <h2>Velkommen til smil og søde sager</h2>
 

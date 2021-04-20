@@ -22,6 +22,7 @@
         This header is inspired by this bootstrap
         example: https://getbootstrap.com/docs/5.0/examples/pricing/
     -->
+
 <header class="d-flex flex-column flex-md-row align-items-center p-3 pb-0 px-md-4 mb-4 bg-white border-bottom shadow-sm">
     <div class="h5 my-0 me-md-auto fw-normal">
     </div>
@@ -60,7 +61,12 @@
     </c:if>
 </header>
 
-<div id="body" class="container" style="min-height: 20vh;">
+    <div id="." class="container" style="min-height: 20vh;">
+        <img src="${pageContext.request.contextPath}/images/logo3.PNG" class ="img-fluid mb-4"/>
+        <div/>
+
+
+        <div id="body" class="container" style="min-height: 20vh;">
     <jsp:doBody/>
 </div>
 
@@ -72,9 +78,9 @@
     <br>
     <h4>Kontakt</h4>
     <p>
-        Email - cupcake@email.com
-        Tlf.  - 10111213
-        Adr.  - Olsker cupcakes 1
+        Email - cupcake@email.com <br>
+        Tlf.  - 10111213 <br>
+        Adr.  - Olsker cupcakes 1 <br>
     </p>
 
     <jsp:invoke fragment="footer"/>
