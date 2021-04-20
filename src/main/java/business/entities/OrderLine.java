@@ -2,21 +2,19 @@ package business.entities;
 
 import java.sql.Timestamp;
 
-public class CupcakeEntry {
+public class OrderLine {
     private int topping;
     private int bottom;
-    private int order;
+    private int orderId;
     private double price;
-    private User user;
     private Timestamp created;
 
-    public CupcakeEntry(int topping, int bottom, int order, double price, Timestamp created) {
+    public OrderLine(int topping, int bottom, int orderId, double price, Timestamp created) {
         this.topping = topping;
         this.bottom = bottom;
-        this.order = order;
+        this.orderId = orderId;
         this.price = price;
         this.created = created;
-        this.user = null;
     }
 
     public int getTopping() {
@@ -35,28 +33,12 @@ public class CupcakeEntry {
         this.bottom = bottom;
     }
 
-    public int getOrder() {
-        return order;
-    }
-
-    public void setOrder(int order) {
-        this.order = order;
-    }
-
     public double getPrice() {
         return price;
     }
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public Timestamp getCreated() {
