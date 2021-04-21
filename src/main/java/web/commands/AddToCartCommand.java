@@ -38,6 +38,8 @@ public class AddToCartCommand extends CommandUnprotectedPage {
 
             cart.addCartItem(new CartItem(bottom, topping, quantity, price));
         }
+        //summen af alt i kurven - bregening
+        request.setAttribute("total", cart.getTotalPrice());
         session.setAttribute("cart", cart);
         session.setAttribute("totalprice", cupcakeFacade.calcTotalPrice(cart));
         return pageToShow;

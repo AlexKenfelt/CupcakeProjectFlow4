@@ -24,6 +24,8 @@
                 bottom: ${cartitem.bottom} top: ${cartitem.top} quantity: ${cartitem.quantity} price: ${cartitem.price} <br/>
             </c:forEach>
 
+            pris i alt: ${requestScope.total}
+
             <c:if test="${sessionScope.role == 'employee' }">
                 <p style="font-size: larger">Det her er hvad du kan gøre,
                     når du er logget ind som medarbejder.</p>
