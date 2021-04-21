@@ -65,12 +65,9 @@
             <p><a href="fc/employeepage">Medarbejder siden</a>
                 </c:if>
 
-                <c:if test="${sessionScope.role == 'customer' }">
-            <p style="font-size: larger">Det er hvad du kan gøre,
-                når du er logget ind som kunde. </p>
-            <p><a href="fc/customerpage">Kunde siden</a>
+                <c:if test="${sessionScope.role == 'customer'}">
+                <p><a href="fc/customerpage">Kunde siden</a>
                 </c:if>
-
         </div>
 
     </jsp:body>

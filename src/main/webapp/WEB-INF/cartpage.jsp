@@ -31,8 +31,6 @@
              </c:if>
 
              <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">Det er hvad du kan gøre,
-                                når du er logget ind som kunde. </p>
                 <p><a href="fc/customerpage">Kunde siden</a>
             </c:if>
 

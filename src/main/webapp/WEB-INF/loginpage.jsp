@@ -36,11 +36,11 @@
                 </c:if>
                 <button class="btn btn-primary" type="submit" value="Login" >Login</button>
 
-                <button class="btn btn-primary" type="submit" value="Login" >Meld dig ind</button>
+                <a type="button" class="btn btn-outline-secondary" type="submit"
+                   href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
+
                 </nav>
-
             </form>
-
         </div>
     </jsp:body>
 </t:genericpage>

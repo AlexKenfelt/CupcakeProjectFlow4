@@ -10,7 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><jsp:invoke fragment="header"/></title>
+    <title>
+        <jsp:invoke fragment="header"/>
+    </title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -19,10 +21,10 @@
     <script src="https://kit.fontawesome.com/c5d38df5c3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!--
-        This header is inspired by this bootstrap
-        example: https://getbootstrap.com/docs/5.0/examples/pricing/
-    -->
+<!--
+    This header is inspired by this bootstrap
+    example: https://getbootstrap.com/docs/5.0/examples/pricing/
+-->
 
 <header class="d-flex flex-column flex-md-row align-items-center p-3 pb-0 px-md-4 mb-4 bg-white border-bottom shadow-sm">
     <div class="h5 my-0 me-md-auto fw-normal">
@@ -50,43 +52,42 @@
         <c:set var="isNotRegisterPage" value="${!fn:endsWith(thisPage,'registerpage.jsp')}"/>
 
         <c:if test="${isNotLoginPage && isNotRegisterPage}">
-            <c:if test="${sessionScope.user != null }">
-                <a type="button" class="btn btn-sm  btn-outline-secondary"
-                href="${pageContext.request.contextPath}/fc/logoutcommand">Logout</a>
-            </c:if>
-            <c:if test="${sessionScope.user == null }">
-                <a type="button" class="btn btn-sm  btn-outline-secondary"
-                   href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
-                <a type="button" class="btn btn-sm  btn-outline-secondary"
-                   href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
-            </c:if>
+        <c:if test="${sessionScope.user != null }">
+            <a type="button" class="btn btn-sm  btn-outline-secondary"
+               href="${pageContext.request.contextPath}/fc/logoutcommand">Logout</a>
+        </c:if>
+        <c:if test="${sessionScope.user == null }">
+            <a type="button" class="btn btn-sm  btn-outline-secondary"
+               href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
+            <a type="button" class="btn btn-sm  btn-outline-secondary"
+               href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
+        </c:if>
     </div>
     </c:if>
 </header>
 
-    <div id="." class="container" style="min-height: 20vh;">
-        <img src="${pageContext.request.contextPath}/images/logo3.PNG" class ="img-fluid mb-4"/>
-        <div/>
+<div id="." class="container" style="min-height: 20vh;">
+    <img src="${pageContext.request.contextPath}/images/logo3.PNG" class="img-fluid mb-4"/>
+    <div/>
 
+    <div id="body" class="container" style="min-height: 20vh;">
+        <jsp:doBody/>
+    </div>
 
-        <div id="body" class="container" style="min-height: 20vh;">
-    <jsp:doBody/>
-</div>
-
-<!-- Footer -->
+    <!-- Footer -->
     <footer>
 
-    <br>
-    <hr>
-    <br>
-    <h4>Kontakt</h4>
-    <p>
-        Email - cupcake@email.com <br>
-        Tlf.  - 10111213 <br>
-        Adr.  - Olsker cupcakes 1 <br>
-    </p>
+        <br>
+        <hr>
+        <br>
+        <h4>Kontakt</h4>
+        <p>
+            Email - cupcake@email.com <br>
+            Tlf. - 10111213 <br>
+            Adr. - Olsker cupcakes 1 <br>
+        </p>
 
-    <jsp:invoke fragment="footer"/>
+        <jsp:invoke fragment="footer"/>
     </footer>
 
 </body>
