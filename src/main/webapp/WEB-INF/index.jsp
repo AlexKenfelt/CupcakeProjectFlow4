@@ -21,8 +21,7 @@
             <p style="text-align: center">Sammensæt her den cupcake der passer til dig:</p><br>
 
             <form action="${pageContext.request.contextPath}/fc/addtocart" method="post">
-
-                <div class="row">
+                <div class="row" style="text-align: center">
                     <div class="col">
                         <label for="bottom">Vælg bund</label> <br>
                         <select name="bottom" id="bottom">

@@ -16,6 +16,7 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/styles.css">
     <meta name="theme-color" content="#7952b3">
+    <script src="https://kit.fontawesome.com/c5d38df5c3.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!--
@@ -31,8 +32,11 @@
             <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Hjem</a>
         </c:if>
         <a class="p-2 text-dark" href="#">Orders</a>
-        <a class="p-2 text-dark" href="<%=request.getContextPath()%>/fc/cartpage">Indkøbskurv</a>
         <a class="p-2 text-dark" href="#">About</a>
+        <a href="<%=request.getContextPath()%>/fc/cartpage">
+            <i class="fas fa-shopping-cart" style="color: #3C1461"></i>
+        </a>
+
     </nav>
 
     <div>
