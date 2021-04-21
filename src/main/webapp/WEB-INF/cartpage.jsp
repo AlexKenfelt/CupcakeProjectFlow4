@@ -20,9 +20,8 @@
             <p style="text-align: center">Hvad har lagt i den søde mave</p><br>
 
 
-
             <c:forEach var="cartitem" items="${sessionScope.cart.cartItemList}">
-                bottom: ${cartitem.bottom} top: ${cartitem.top} quantity: ${cartitem.quantity} <br/>
+                bottom: ${cartitem.bottom} top: ${cartitem.top} quantity: ${cartitem.quantity} price: ${cartitem.price} <br/>
             </c:forEach>
 
             <c:if test="${sessionScope.role == 'employee' }">
@@ -36,6 +35,8 @@
                                 når du er logget ind som kunde. </p>
                 <p><a href="fc/customerpage">Kunde siden</a>
             </c:if>
+
+            ${sessionScope.totalprice}
 
         </div>
 
