@@ -13,4 +13,18 @@ public class Cart {
     public List<CartItem> getCartItemList() {
         return cartItemList;
     }
+
+    // remove item 
+
+
+    public double getTotalPrice(){
+        double sum = 0.0;
+        for (CartItem cartItem : cartItemList) {
+            sum=sum+cartItem.getPrice()* cartItem.getQuantity();
+
+        }
+
+        return sum;
+    }
+
 }
