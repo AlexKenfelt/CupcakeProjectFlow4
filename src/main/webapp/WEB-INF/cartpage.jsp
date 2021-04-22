@@ -26,25 +26,35 @@
                 price: ${cartitem.price} <br/>
             </c:forEach>
 
-            pris i alt: ${requestScope.total}
+            pris i alt: ${sessionScope.totalprice}
 
             <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">Det her er hvad du kan gøre,
-                    når du er logget ind som medarbejder.</p>
-                 <p><a href="fc/employeepage">Medarbejder siden</a>
-             </c:if>
+            <p style="font-size: larger">Det her er hvad du kan gøre,
+                når du er logget ind som medarbejder.</p>
+            <p><a href="fc/employeepage">Medarbejder siden</a>
+                </c:if>
 
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p><a href="fc/customerpage">Kunde siden</a>
-            </c:if>
+                <c:if test="${sessionScope.role == 'customer' }">
+            <p><a href="fc/customerpage">Kunde siden</a>
+                </c:if>
 
-            ${sessionScope.totalprice}
-            <c:if test="${sessionScope.role == 'customer'}">
-            <div class="btn mt-3">
+
+                <c:if test="${sessionScope.role == 'customer'}">
+            <div align="center">
                 <a href="${pageContext.request.contextPath}/fc/paymentpage">
-                    <button style="background-color: #3C1461; color: white;">Gå til betaling</button></a>
+                    <button style="background-color: #3C1461; color: white;">Gå til betaling</button>
+                </a>
             </div>
             </c:if>
+
+            <c:if test="${sessionScope.role == 'customer'}">
+                <div align="center">
+                    <a href="${pageContext.request.contextPath}/fc/index">
+                        <button style="background-color: #3C1461; color: white;">Læg mere i kurv</button>
+                    </a>
+                </div>
+            </c:if>
+
         </div>
 
     </jsp:body>

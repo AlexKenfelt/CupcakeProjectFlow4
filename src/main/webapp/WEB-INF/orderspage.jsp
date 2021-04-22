@@ -32,6 +32,7 @@
                 <button style="background-color: #3C1461; color: white;">Se dine ordre</button>
             </div>
             <div class="col"></div>
+
         </div>
 
         </div>
