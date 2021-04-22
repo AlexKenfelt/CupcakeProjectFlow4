@@ -16,12 +16,14 @@
 
         <div>
 
-
-            <p style="text-align: center">Hvad har lagt i den søde mave</p><br>
-
+            <h2 style="text-align: center"> Hvad har du lagt i den søde mave? </h2> <br>
 
             <c:forEach var="cartitem" items="${sessionScope.cart.cartItemList}">
-                bottom: ${cartitem.bottom} top: ${cartitem.top} quantity: ${cartitem.quantity} price: ${cartitem.price} <br/>
+
+                bottom: ${cartitem.bottom}
+                top: ${cartitem.top}
+                quantity: ${cartitem.quantity}
+                price: ${cartitem.price} <br/>
             </c:forEach>
 
             pris i alt: ${requestScope.total}
@@ -37,7 +39,12 @@
             </c:if>
 
             ${sessionScope.totalprice}
-
+            <c:if test="${sessionScope.role == 'customer'}">
+            <div class="btn mt-3">
+                <a href="${pageContext.request.contextPath}/fc/paymentpage">
+                    <button style="background-color: #3C1461; color: white;">Gå til betaling</button></a>
+            </div>
+            </c:if>
         </div>
 
     </jsp:body>
