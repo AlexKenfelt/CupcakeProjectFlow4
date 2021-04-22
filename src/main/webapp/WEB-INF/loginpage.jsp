@@ -11,8 +11,10 @@
     </jsp:attribute>
 
     <jsp:body>
-        <div style="margin-top: 5em;" class="container">
-            <form name="login" action="${pageContext.request.contextPath}/fc/logincommand"  method="POST">
+        <div align="center" class="align-content-center">
+            <h2 style="text-align: center"> Login </h2>
+            </br>
+            <form name="login" action="${pageContext.request.contextPath}/fc/logincommand" method="POST">
                 <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="email">Email</label>
                     <div class="col-sm-4">
@@ -34,9 +36,9 @@
                 <c:if test="${not empty param.msg}">
                     <p style="font-size: large">${param.msg}</p>
                 </c:if>
-                <button class="btn btn-primary" type="submit" value="Login" >Login</button>
+                <button class="btn mt-3" style="background-color: #3C1461; color: white" value="Login" >Login</button>
 
-                <a type="button" class="btn btn-outline-secondary" type="submit"
+                <a type="button" class="btn mt-3" style="background-color: #3C1461; color: white" type="submit"
                    href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
 
                 </nav>

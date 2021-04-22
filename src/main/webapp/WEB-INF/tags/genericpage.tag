@@ -31,11 +31,13 @@
     </div>
     <nav class="my-2 my-md-0 me-md-3">
         <c:if test="${addHomeLink == null }">
-            <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Hjem</a>
+            <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/index">Hjem</a>
         </c:if>
-        <a class="p-2 text-dark" href="#">Orders</a>
+        <c:if test="${sessionScope.user.role.equals('employee')}">
+        <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/orderspage">Orders</a>
+        </c:if>
         <a class="p-2 text-dark" href="#">About</a>
-        <a href="<%=request.getContextPath()%>/fc/cartpage">
+        <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/cartpage">
             <i class="fas fa-shopping-cart" style="color: #3C1461"></i>
         </a>
 
@@ -89,6 +91,6 @@
 
         <jsp:invoke fragment="footer"/>
     </footer>
-
+</div>
 </body>
 </html>
