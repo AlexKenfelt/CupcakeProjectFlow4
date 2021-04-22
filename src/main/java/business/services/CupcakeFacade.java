@@ -1,13 +1,17 @@
 package business.services;
 
+import business.entities.Topping;
 import business.entities.Bottom;
 import business.entities.Cart;
 import business.entities.CartItem;
-import business.entities.Topping;
 import business.exceptions.UserException;
 import business.persistence.CupcakeMapper;
 import business.persistence.Database;
 
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class CupcakeFacade {
@@ -56,6 +60,20 @@ public class CupcakeFacade {
         }
 
     return totalPrice;
+    }
+
+    //remove methode skal laves her
+    public static void deleteOrderFromItem (int id, Database database) throws UserException{
+        try {
+            Connection con = database.connect();
+            String SQL = "DELETE from cupcake WHERE order_id = ?;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1,id);
+            ps.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
     }
 
 }
