@@ -13,7 +13,14 @@
     </jsp:attribute>
 
     <jsp:body>
-        <h2 style="text-align: center"> Betaling </h2>
+        <h2 style="text-align: center"> Din kvittering</h2>
+        <c:forEach var="cartitem" items="${sessionScope.cart.cartItemList}">
+
+            Bottom: ${cartitem.bottom}
+            Top: ${cartitem.top}
+            Quantity: ${cartitem.quantity}
+            Price: ${cartitem.price} <br/>
+        </c:forEach>
 
 
 

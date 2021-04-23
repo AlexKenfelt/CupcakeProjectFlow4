@@ -1,5 +1,7 @@
 package business.persistence;
 
+import business.entities.Cart;
+import business.entities.CartItem;
 import business.entities.Order;
 import business.entities.User;
 import business.exceptions.UserException;
@@ -63,5 +65,47 @@ public class OrderMapper {
             throw new UserException("Connection to database could not be established");
         }
 
+    }
+
+    public void createOrder(Cart cart, int userId) throws Exception {
+        try (Connection connection = database.connect()) {
+            String sql = "INSERT INTO orders(fk_user_id) VALUES (?)";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                ps.setInt(1, userId);
+                ps.executeUpdate();
+
+                ResultSet ids = ps.getGeneratedKeys();
+                ids.next();
+                int orderId = ids.getInt(1);
+
+                for(CartItem c: cart.getCartItemList()){
+                    createOrderLine(c, orderId);
+                }
+            } catch (SQLException ex) {
+                throw new UserException(ex.getMessage());
+            }
+        } catch (SQLException | UserException ex) {
+            throw new Exception(ex.getMessage());
+        }
+    }
+
+    private void createOrderLine(CartItem c, int orderId) throws Exception {
+        try (Connection connection = database.connect()) {
+            String sql = "INSERT INTO order_details(fk_topping_id, fk_bottom_id, detail_qty, detail_price, fk_order_id) VALUES (?,?,?,?,?)";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                ps.setInt(1, c.getTop().getId());
+                ps.setInt(2,c.getBottom().getId());
+                ps.setInt(3,c.getQuantity());
+                ps.setDouble(4,c.getPrice());
+                ps.setInt(5,orderId);
+                ps.executeUpdate();
+            } catch (SQLException ex) {
+                throw new UserException(ex.getMessage());
+            }
+        } catch (SQLException | UserException ex) {
+            throw new Exception(ex.getMessage());
+        }
     }
 }

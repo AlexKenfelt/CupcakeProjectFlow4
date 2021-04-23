@@ -43,20 +43,23 @@
 
                 <c:if test="${sessionScope.role == 'customer'}">
             <div align="center">
-                <a href="${pageContext.request.contextPath}/fc/paymentpage">
-                    <button style="background-color: #3C1461; color: white;">Gå til betaling</button>
-                </a>
+            <form action="${pageContext.request.contextPath}/fc/makeorder" method="post">
+                <input type="hidden" name="userid" value="${sessionScope.user.id}">
+                <input type="submit" value="Bestil" style="background-color: #3C1461; color: white;">
+            </form>
             </div>
-            </c:if>
-
-            <c:if test="${sessionScope.role == 'customer'}">
                 <div align="center">
                     <a href="${pageContext.request.contextPath}/fc/index">
                         <button style="background-color: #3C1461; color: white;">Læg mere i kurv</button>
                     </a>
                 </div>
             </c:if>
-<a href="${pageContext.request.contextPath}/fc/makeorder">Bestil</a>
+            <c:if test="${sessionScope.role != 'customer'}">
+                <a href="${pageContext.request.contextPath}/fc/loginpage">
+                    <button style="background-color: #3C1461; color: white;">Log ind og bestil</button>
+                </a>
+            </c:if>
+
         </div>
 
     </jsp:body>

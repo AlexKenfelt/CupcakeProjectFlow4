@@ -18,7 +18,7 @@ public class UserMapper
     {
         try (Connection connection = database.connect())
         {
-            String sql = "INSERT INTO user (email, password, role) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO users (email, user_password, user_role) VALUES (?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
             {
@@ -48,7 +48,7 @@ public class UserMapper
     {
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT id, role, balance FROM user WHERE email=? AND password=?";
+            String sql = "SELECT user_id, user_role, balance FROM users WHERE email=? AND user_password=?";
 
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
@@ -58,8 +58,8 @@ public class UserMapper
                 ResultSet rs = ps.executeQuery();
                 if (rs.next())
                 {
-                    String role = rs.getString("role");
-                    int id = rs.getInt("id");
+                    String role = rs.getString("user_role");
+                    int id = rs.getInt("user_id");
                     double balance = rs.getDouble("balance");
                     User user = new User(email, password, role, balance);
                     user.setId(id);
