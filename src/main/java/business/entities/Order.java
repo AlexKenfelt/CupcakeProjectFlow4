@@ -4,25 +4,22 @@ import java.sql.Timestamp;
 
 public class Order {
     private int orderId;
-    private int userId;
-    private double price;
+    private User user;
     private Timestamp timestamp;
+    private String status;
 
-    public Order(int orderId, int userId, double price, Timestamp timestamp) {
+    public Order(int orderId, User user, Timestamp timestamp, String status) {
         this.orderId = orderId;
-        this.userId = userId;
-        this.price = price;
+        this.user = user;
         this.timestamp = timestamp;
+        this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId=" + orderId +
-                ", userId=" + userId +
-                ", price=" + price +
-                ", timestamp=" + timestamp +
-                '}';
+    public Order(int orderId, User user, Timestamp timestamp) {
+        this.orderId = orderId;
+        this.user = user;
+        this.timestamp = timestamp;
+        this.status = "afventer";
     }
 
     public int getOrderId() {
@@ -33,20 +30,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Timestamp getTimestamp() {
@@ -55,5 +44,23 @@ public class Order {
 
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", user=" + user.getEmail() +
+                ", timestamp=" + timestamp +
+                ", status='" + status + '\'' +
+                '}';
     }
 }

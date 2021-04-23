@@ -3,19 +3,16 @@ package business.persistence;
 import business.entities.Bottom;
 import business.entities.Order;
 import business.entities.Topping;
+import business.entities.User;
 import business.exceptions.UserException;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CupcakeMapper {
 
     private static Database database;
-    private Database database;
 
     public CupcakeMapper(Database database) {
         this.database = database;
@@ -34,9 +31,13 @@ public class CupcakeMapper {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next())
                 {
-                    int id = rs.getInt("user_id");
-                    String name = rs.getString("name");
-                    cupcakeList.add(new Order(user_id, name));
+                    int id = rs.getInt("id");
+                    Timestamp timestamp = rs.getTimestamp("time");
+                    String status = rs.getString("status");
+                    int user_id = rs.getInt("user_id");
+
+                    User user = new User(user_id);
+                    cupcakeList.add(new Order(id, user, timestamp, status));
                 }
                 return cupcakeList;
             }
