@@ -1,12 +1,10 @@
 package business.services;
 
-import business.entities.Topping;
-import business.entities.Bottom;
-import business.entities.Cart;
-import business.entities.CartItem;
+import business.entities.*;
 import business.exceptions.UserException;
 import business.persistence.CupcakeMapper;
 import business.persistence.Database;
+import business.persistence.OrderMapper;
 
 
 import java.sql.Connection;
@@ -15,15 +13,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class CupcakeFacade {
-    CupcakeMapper cupcakeMapper;
+    private final CupcakeMapper cupcakeMapper;
+    private final OrderMapper orderMapper;
 
     public CupcakeFacade(Database database) {
-        this.cupcakeMapper=new CupcakeMapper(database);
-
+        this.cupcakeMapper = new CupcakeMapper(database);
+        this.orderMapper = new OrderMapper(database);
     }
 
-    public static int getAllCupcake() {
-        return getAllCupcake();
+    public List<Order> getAllOrders() throws UserException
+    {
+        return orderMapper.getAllOrders();
     }
 
     public List<Topping> getAllTopping() throws UserException {
@@ -31,8 +31,8 @@ public class CupcakeFacade {
         return cupcakeMapper.getAllTopping();
     }
 
-    public int deleteOrderFromItem (int id, Database database) throws UserException{
-        return cupcakeMapper.deleteOrderFromItem(id, database);
+    public int deleteOrderFromItem (int id) throws UserException{
+        return cupcakeMapper.deleteOrderFromItem(id);
     }
 
     public List<Bottom> getAllBottom() throws UserException {

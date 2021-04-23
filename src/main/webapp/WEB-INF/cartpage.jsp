@@ -54,7 +54,7 @@
                     </a>
                 </div>
             </c:if>
-
+<a href="${pageContext.request.contextPath}/fc/makeorder">Bestil</a>
         </div>
 
     </jsp:body>

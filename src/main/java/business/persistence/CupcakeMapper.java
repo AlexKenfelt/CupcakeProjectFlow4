@@ -52,8 +52,6 @@ public class CupcakeMapper {
         }
     }
 
-
-
     public List<Bottom> getAllBottoms() throws UserException {
         List<Bottom> bottomsList = new ArrayList<>();
 
@@ -63,9 +61,9 @@ public class CupcakeMapper {
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
-                    int id = rs.getInt("id");
-                    String name = rs.getString("name");
-                    double price = rs.getDouble("price");
+                    int id = rs.getInt("bottom_id");
+                    String name = rs.getString("bottom_name");
+                    double price = rs.getDouble("bottom_price");
                     Bottom tmpBottom = new Bottom(id, name, price);
                     bottomsList.add(tmpBottom);
                 }
@@ -87,9 +85,9 @@ public class CupcakeMapper {
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
-                    int id = rs.getInt("id");
-                    String name = rs.getString("name");
-                    double price = rs.getDouble("price");
+                    int id = rs.getInt("topping_id");
+                    String name = rs.getString("topping_name");
+                    double price = rs.getDouble("topping_price");
                     Topping tmpTopping = new Topping(id, name, price);
                     toppingList.add(tmpTopping);
                 }
@@ -102,8 +100,7 @@ public class CupcakeMapper {
         }
     }
 
-
-    public static int deleteOrderFromItem(int id, Database database) throws UserException {
+    public int deleteOrderFromItem(int id) throws UserException {
         try {
             Connection con = database.connect();
             String SQL = "DELETE from cupcake WHERE order_id = ?;";
@@ -123,5 +120,4 @@ public class CupcakeMapper {
             throw new UserException(ex.getMessage());
         }
     }
-
 }

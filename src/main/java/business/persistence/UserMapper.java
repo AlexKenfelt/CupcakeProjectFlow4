@@ -14,7 +14,7 @@ public class UserMapper
         this.database = database;
     }
 
-    public void createUser(User user) throws UserException
+    public User createUser(User user) throws UserException
     {
         try (Connection connection = database.connect())
         {
@@ -30,6 +30,8 @@ public class UserMapper
                 ids.next();
                 int id = ids.getInt(1);
                 user.setId(id);
+
+                return user;
             }
             catch (SQLException ex)
             {

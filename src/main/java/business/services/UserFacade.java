@@ -21,9 +21,7 @@ public class UserFacade
 
     public User createUser(String email, String password, double balance) throws UserException
     {
-        User user = new User(email, password, "customer", balance);
-        userMapper.createUser(user);
-        return user;
+        return userMapper.createUser(new User(email, password, "customer", balance));
     }
 
 }
