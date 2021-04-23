@@ -20,13 +20,13 @@
 
             <c:forEach var="cartitem" items="${sessionScope.cart.cartItemList}">
 
-                bottom: ${cartitem.bottom}
-                top: ${cartitem.top}
-                quantity: ${cartitem.quantity}
-                price: ${cartitem.price} <br/>
+                Bottom: ${cartitem.bottom}
+                Top: ${cartitem.top}
+                Quantity: ${cartitem.quantity}
+                Price: ${cartitem.price} <br/>
             </c:forEach>
 
-            pris i alt: ${requestScope.total}
+            Pris i alt: ${requestScope.total}
 
             <c:if test="${sessionScope.role == 'employee' }">
                 <p style="font-size: larger">Det her er hvad du kan gøre,
