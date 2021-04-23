@@ -28,4 +28,14 @@ public class CartItem {
     public double getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "bottom=" + bottom +
+                ", top=" + top +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
+    }
 }

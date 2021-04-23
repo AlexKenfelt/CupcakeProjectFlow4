@@ -17,6 +17,15 @@ public class User
         this.balance = balance;
     }
 
+    public User(String email, String password, String role, double balance)
+    {
+        this.id = -1;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.balance = balance;
+    }
+
     public User(int id)
     {
         this.id = id;

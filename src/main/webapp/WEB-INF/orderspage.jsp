@@ -31,9 +31,7 @@
             <div class="btn mt-3">
                 <button style="background-color: #3C1461; color: white;">Se dine ordre</button>
             </div>
-            <div class="col"></div>
-
-        </div>
+                <button class="btn mt-3" style="background-color: #3C1461; color: white" value="Login" >Login</button>
 
         </div>
 
