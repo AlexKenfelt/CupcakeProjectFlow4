@@ -13,8 +13,9 @@
     </jsp:attribute>
 
     <jsp:body>
+        <h2 style="text-align: center"> Betaling </h2>
 
-        <h3>hej</h3>
+
 
     </jsp:body>
 </t:genericpage>

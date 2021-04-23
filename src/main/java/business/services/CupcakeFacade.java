@@ -22,9 +22,17 @@ public class CupcakeFacade {
 
     }
 
+    public static int getAllCupcake() {
+        return getAllCupcake();
+    }
+
     public List<Topping> getAllTopping() throws UserException {
 
         return cupcakeMapper.getAllTopping();
+    }
+
+    public int deleteOrderFromItem (int id, Database database) throws UserException{
+        return cupcakeMapper.deleteOrderFromItem(id, database);
     }
 
     public List<Bottom> getAllBottom() throws UserException {
@@ -62,18 +70,6 @@ public class CupcakeFacade {
     return totalPrice;
     }
 
-    //remove methode skal laves her
-    public static void deleteOrderFromItem (int id, Database database) throws UserException{
-        try {
-            Connection con = database.connect();
-            String SQL = "DELETE from cupcake WHERE order_id = ?;";
-            PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setInt(1,id);
-            ps.executeUpdate();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
 
-    }
 
 }
