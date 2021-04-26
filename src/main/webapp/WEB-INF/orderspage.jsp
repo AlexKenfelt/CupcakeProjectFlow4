@@ -13,6 +13,36 @@
     </jsp:attribute>
 
     <jsp:body>
+        <h3>Her kan du se en oversigt over ordrenummer: ${requestScope.orderId}</h3>
+        <form method="post" action="${pageContext.request.contextPath}/fc/adminorderpage">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Antal</th>
+                    <th scope="col">Bund</th>
+                    <th scope="col">Topping</th>
+                    <th scope="col">Pris</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="cartItem" items="${requestScope.orderContent}">
+                    <tr>
+                        <td>${cartItem.quantity}</td>
+                        <td>${cartItem.bottom}</td>
+                        <td>${cartItem.topping}</td>
+                        <td>${cartItem.price},-</td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-md"></div>
+                <div class="col-md " style="text-align:center;">
+                    <button style="width:150px;" class="btn btn-secondary" type="submit" name="return">Gå tilbage</button>
+                </div>
+                <div class="col-md"></div>
+            </div>
+        </form>
 
         <div>
             <c:if test="${sessionScope.role == 'employee' }">
@@ -31,7 +61,6 @@
             <div class="btn mt-3">
                 <button style="background-color: #3C1461; color: white;">Se dine ordre</button>
             </div>
-                <button class="btn mt-3" style="background-color: #3C1461; color: white" value="Login" >Login</button>
 
         </div>
 

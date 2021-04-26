@@ -33,6 +33,7 @@ public abstract class Command
         commands.put("orderspage", new AdminOrderCommand("orderspage", "employee"));
         commands.put("paymentpage", new PaymentCommand("paymentpage","customer"));
         commands.put("makeorder", new MakeOrderCommand("makeorder"));
+        commands.put("adminorderpage", new AdminOrderCommand("adminorderpage", "employee"));
     }
 
     public static Command fromPath(

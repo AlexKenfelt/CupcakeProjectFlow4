@@ -52,6 +52,7 @@ public class OrderMapper {
                     String order_status = rs.getString("order_status");
                     User user = new User(fk_user_id);
                     orderList.add(new Order(order_id, user, order_time, order_status ));
+
                 }
                 return orderList;
             }
