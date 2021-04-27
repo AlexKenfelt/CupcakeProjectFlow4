@@ -36,7 +36,6 @@
         <c:if test="${sessionScope.user.role.equals('employee')}">
         <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/orderspage">Orders</a>
         </c:if>
-        <a class="p-2 text-dark" href="#">About</a>
         <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/cartpage">
             <i class="fas fa-shopping-cart" style="color: #3C1461"></i>
         </a>
